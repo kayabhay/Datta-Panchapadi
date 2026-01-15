@@ -64,8 +64,4 @@ Open `http://localhost:5173` in your browser.
 - \`src/types\`: TypeScript definitions.
 - \`src/assets\`: Images and static resources.
 
-## Contact
 
-**Shri Yoganand Saraswati Sansthan**
-Gunj (Khurd), Ta. Pathri, Dist. Parbhani
-Email: shriyoganandmaharajsansthan@gmail.com
