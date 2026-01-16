@@ -67,9 +67,9 @@ export const NavigationMenu: React.FC = () => {
                                         <div className="text-lg font-serif text-ink group-hover:text-red-700 transition-colors">
                                             {chapter.title || "Chapter"}
                                         </div>
-                                        <div className="text-xs text-gray-400 font-sans mt-1">
+                                        {/* <div className="text-xs text-gray-400 font-sans mt-1">
                                             {chapter.slug}
-                                        </div>
+                                        </div> */}
                                     </div>
                                 ))}
                             </nav>

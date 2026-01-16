@@ -1,9 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --color-paper: #ffffff;
+  --color-paper: #f2f2f2;
   --color-ink: #222;
   --font-serif: "Georgia", serif;
+  --font-slab: "Rockwell", "Courier Bold", "Courier", serif;
 }
 
 html,
@@ -20,4 +21,92 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+article {
+  background-color: var(--bg-article, #ffffff);
+  color: var(--text-article, inherit);
+  margin-bottom: 2rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Theme Classes applied to the wrapper */
+/* Theme Classes applied to the wrapper */
+.theme-light {
+  --bg-app: #f2f2f2;
+  --bg-article: #ffffff;
+  --text-article: #222;
+}
+
+.theme-dark {
+  --bg-app: #121212;
+  --bg-article: #1e1e1e;
+  --text-article: #e0e0e0;
+  --color-ink: #e0e0e0;
+  /* Override global ink color for readability */
+}
+
+.theme-papyrus {
+  --bg-app: linear-gradient(135deg, #3d2817 0%, #5a4028 50%, #3d2817 100%);
+  --bg-article: #f3e9c8;
+  --text-article: #4a3b2a;
+  /* Deep brown */
+  --color-ink: #4a3b2a;
+}
+
+/* Ancient Papyrus Scroll Texture - Applied to article */
+.theme-papyrus article {
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(139, 90, 43, 0.03) 2px, rgba(139, 90, 43, 0.03) 4px),
+    repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(101, 67, 33, 0.03) 2px, rgba(101, 67, 33, 0.03) 4px),
+    radial-gradient(ellipse at 30% 20%, #f4e8d0 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, #e8d5b7 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, #ebe0c8 0%, #d9c9a8 100%);
+  box-shadow:
+    inset 0 0 120px rgba(139, 90, 43, 0.2),
+    inset 0 0 60px rgba(101, 67, 33, 0.15),
+    inset -10px 0 40px rgba(139, 90, 43, 0.1),
+    inset 10px 0 40px rgba(139, 90, 43, 0.1),
+    0 20px 60px rgba(0, 0, 0, 0.7),
+    0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 3px solid #9d7f54;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.theme-papyrus article::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80px 60px at 15% 25%, rgba(101, 67, 33, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse 100px 70px at 85% 15%, rgba(139, 90, 43, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 60px 90px at 20% 75%, rgba(120, 80, 40, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse 90px 50px at 75% 85%, rgba(101, 67, 33, 0.13) 0%, transparent 50%),
+    radial-gradient(ellipse 70px 80px at 50% 40%, rgba(92, 64, 35, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 50px 50px at 90% 60%, rgba(110, 75, 38, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  border-radius: inherit;
+  z-index: 1;
+}
+
+.theme-papyrus article::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><filter id="crumple1"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="5" seed="1"/><feDisplacementMap in="SourceGraphic" scale="8"/></filter><rect width="400" height="400" fill="rgba(101,67,33,0.15)" filter="url(%23crumple1)"/></svg>'),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><filter id="crumple2"><feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="4" seed="3"/><feDisplacementMap in="SourceGraphic" scale="6"/></filter><rect width="400" height="400" fill="rgba(139,90,43,0.12)" filter="url(%23crumple2)"/></svg>');
+  background-blend-mode: multiply, overlay;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  border-radius: inherit;
+  z-index: 2;
+}
+
+/* Ensure content sits above the paper texture overlays */
+.theme-papyrus article>* {
+  position: relative;
+  z-index: 3;
 }
