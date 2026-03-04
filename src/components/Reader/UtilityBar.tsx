@@ -32,7 +32,7 @@ export const UtilityBar: React.FC<UtilityBarProps> = () => {
     };
 
     return (
-        <div className="fixed bottom-0 left-0 right-0 z-50 p-4 pb-6 bg-paper/90 backdrop-blur-md border-t border-ink/10 transition-colors duration-300 print:hidden">
+        <div className="fixed bottom-0 left-0 right-0 z-50 p-4 pb-6 bg-paper/90 backdrop-blur-md border-t border-ink/10 transition-colors duration-300 print:hidden" style={{ fontSize: '16px' }}>
             <div className="max-w-2xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
 
                 {/* Navigation Group */}
@@ -40,19 +40,19 @@ export const UtilityBar: React.FC<UtilityBarProps> = () => {
                     <button
                         onClick={() => prevChapter && scrollToChapter(prevChapter.id)}
                         disabled={!prevChapter}
-                        className="px-4 py-2 rounded-lg hover:bg-black/5 disabled:opacity-30 disabled:cursor-not-allowed transition-colors font-sans text-sm font-medium flex items-center gap-2"
+                        className="px-4 py-2 rounded-lg hover:bg-black/5 disabled:opacity-30 disabled:cursor-not-allowed transition-colors font-sans font-medium flex items-center gap-2" style={{ fontSize: '14px' }}
                     >
                         <span>←</span> <span className="hidden sm:inline">Prev</span>
                     </button>
 
-                    <span className="text-xs font-sans opacity-40 uppercase tracking-widest text-center truncate px-2">
+                    <span className="font-sans opacity-40 uppercase tracking-widest text-center truncate px-2" style={{ fontSize: '11px' }}>
                         {currentIndex + 1} / {sampleBook.chapters.length}
                     </span>
 
                     <button
                         onClick={() => nextChapter && scrollToChapter(nextChapter.id)}
                         disabled={!nextChapter}
-                        className="px-4 py-2 rounded-lg hover:bg-black/5 disabled:opacity-30 disabled:cursor-not-allowed transition-colors font-sans text-sm font-medium flex items-center gap-2"
+                        className="px-4 py-2 rounded-lg hover:bg-black/5 disabled:opacity-30 disabled:cursor-not-allowed transition-colors font-sans font-medium flex items-center gap-2" style={{ fontSize: '14px' }}
                     >
                         <span className="hidden sm:inline">Next</span> <span>→</span>
                     </button>
@@ -78,14 +78,14 @@ export const UtilityBar: React.FC<UtilityBarProps> = () => {
                     <div className="flex items-center bg-black/5 rounded-lg">
                         <button
                             onClick={decreaseFontSize}
-                            className="px-3 py-2 hover:bg-black/5 rounded-l-lg text-sm font-sans transition-colors"
+                            className="px-3 py-2 hover:bg-black/5 rounded-l-lg font-sans transition-colors" style={{ fontSize: '14px' }}
                         >
                             A-
                         </button>
                         <div className="w-px h-full bg-black/5" />
                         <button
                             onClick={increaseFontSize}
-                            className="px-3 py-2 hover:bg-black/5 rounded-r-lg text-lg font-serif font-bold transition-colors"
+                            className="px-3 py-2 hover:bg-black/5 rounded-r-lg font-serif font-bold transition-colors" style={{ fontSize: '18px' }}
                         >
                             A+
                         </button>
@@ -96,7 +96,7 @@ export const UtilityBar: React.FC<UtilityBarProps> = () => {
                     {/* Font Family */}
                     <button
                         onClick={cycleFontFamily}
-                        className="px-3 py-2 rounded-lg hover:bg-black/5 transition-colors font-sans text-sm min-w-[4rem]"
+                        className="px-3 py-2 rounded-lg hover:bg-black/5 transition-colors font-sans min-w-[4rem]" style={{ fontSize: '14px' }}
                     >
                         {fontFamily === 'serif' && 'Serif'}
                         {fontFamily === 'sans' && 'Sans'}

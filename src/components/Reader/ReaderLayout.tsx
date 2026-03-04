@@ -25,7 +25,8 @@ export const ReaderLayout: React.FC<ReaderLayoutProps> = ({ children }) => {
                 fontClass
             )}
             style={{
-                background: 'var(--bg-app)'
+                background: 'var(--bg-app)',
+                overflowX: 'hidden'
             } as React.CSSProperties}
         >
             <NavigationMenu />
@@ -33,8 +34,8 @@ export const ReaderLayout: React.FC<ReaderLayoutProps> = ({ children }) => {
             Antigravity Principle: Minimal Chrome.
             We might add a fading nav bar later. for now, just content.
             */}
-            <main className="w-full flex justify-center pb-24">
-                <div style={{ fontSize: `${fontSize}px` }} className="w-full">
+            <main className="w-full flex justify-center pb-24" style={{ overflowX: 'hidden' }}>
+                <div style={{ fontSize: `${fontSize}px`, maxWidth: '100%', overflowX: 'hidden' }} className="w-full">
                     {children}
                 </div>
             </main>
